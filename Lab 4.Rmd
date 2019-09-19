@@ -1,0 +1,109 @@
+---
+title: "Lab 4"
+author: "Julia Foley"
+date: "9/17/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+babies <- read_csv("https://raw.githubusercontent.com/ervance1/Sp2018-Data-Science-repo/master/babies2a.dat")
+babies <- rename(babies, bwtoz = `bwt/oz`) 
+```
+
+## Team Lab 
+
+### Hypothesis
+
+**Question 1**
+
+**Question 2**
+
+We believe that there will be a positive correlation between birth weight and length of gestation because the baby develops during gestation so, it would make sense that the longer the gestation, the higher the birth weight. We also predict that babies whose mothers smoke will weigh less than babies whose mothers don't. 
+
+### Why Important
+
+**Question 1**
+
+Whether or not smoking increases a babies chance of being premature is important because that would mean that smoking has a negative effect on pregnancy and babies health.  
+
+**Question 2**
+
+### More Detailed Why Important 
+
+**Question 1**
+
+If smoking has a negative effect on pregnancy, it would mean that expecting mothers would stop smoking. This would not be good for the cigarette companies because they would lose money. Additionally, it would provide further information to why babies are premature and would open up many other researches about the effects of smoking on pregnancy and birth. 
+
+**Question 2**
+
+### Two Plots that Answer the Main Question
+
+**Question 1**
+
+**Question 2** 
+
+##### Gestation v. Birth Weight
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplot(data = babies, mapping = aes(x=bwtoz, y = gestation, color = Premature)) +
+  geom_jitter() +
+  geom_smooth(method = lm) +
+  facet_wrap(~smoke)
+```
+
+```{r, echo=FALSE}
+lm(gestation~bwtoz, data = babies)
+```
+
+### Conclusion
+
+**Question 1**
+
+**Question 2**
+
+Our hypothesis that there will be a positive correlation between birth weight and gestation was correct. As you can see in the lm, the slope ( birth weight/gestation) is .3422 which means there is a positive correlation. Our hypothesis about the effect of whether or not the mother smoked was slightly correct. There appears to a weak negative correlation between birth weight and smoking. The data shows that babies whose mothers smoke have a slightly lower birth weight than babies whose mothers don't smoke. Lastly, the color difference between premature and not premature is interesting because it further shows the correlation between gestation and birth weight. 
+
+### Recommendation 
+
+### Individual
+
+### Julia Foley 
+
+**Question** 
+
+What is the correlation between a mother's pregnant weight and a baby's birth weight? Do babies with mothers who smoke have a higher or lower birth weight? Are babies whose mothers smoke more likely to be premature than babies whose mothers don't smoke? 
+
+**Hypothesis** 
+
+I believe that there will be a positive correlation between birth weight and mother's pregnant weight. Additionally, I believe that Premature babies will have a lower birth weight than babies who are not premature. Lastly, I believe that in the premature section, there will be more babies whose mothers smoke than babies whose mothers did not smoke. 
+
+##### Birth Weight v. Mother's Weight in Relation to Smoking
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplot(data = babies, mapping = aes(x=bwtoz, y = mpregwt, color = smoke)) +
+  geom_point() +
+  geom_smooth(method = lm) +
+  facet_wrap(~Premature)
+```
+```{r, echo = FALSE}
+lm(mpregwt~bwtoz, data = babies)
+```
+
+**Findings**
+
+I found that my hypothesis that there would be a positive correlation between a mother's pregnant weight and birth weight was correct. As shown by the lm slope, there is a weak positive correlation. Additionally, the plots show that there is a slight shift to the left in the premature graph as opposed to the not premature graph. This means that babies who are premature have a lower birth weight. Additionally, the data shows that there are more premature babies with mothers who smoked than with mothers who didn't smoke. This supports the two main questions because the plots show the relationship between a mother's weight, birth weight, premature, and smoking. Additionally, the data supports the two main questions because it shows that there is a negative correlation between premature and smoking, and a positive correlation between premature and smoking.  
+
+### What each Member did 
+
+**Julia Foley**
+
+##### Individual 
+
+I created a plot using ggplot, geom_point, geom_smooth, lm, facet_wrap, and color = smoke. I also used lm to find the equation of the line. This helped me to compare the relationship between mother's pregnant weight, birth weight, premature, and smoking. Additionally, I made a question and a hypothesis, and I reported my findings.
+
+##### Team 
+
+I created the document, I wrote the hypothesis and the conclusion for question 2. I also helped out with plot 2. 
+
