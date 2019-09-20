@@ -1,0 +1,25 @@
+---
+title: "InClass9_18"
+author: "Thomas Neal"
+date: "Lab 4"
+output: html_document
+---
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+babies <- read_csv("https://raw.githubusercontent.com/ervance1/Sp2018-Data-Science-repo/master/babies2a.dat")
+babies <- rename(babies, bwtoz = `bwt/oz`)
+
+
+ggplot(data=babies) +
+  geom_jitter(mapping=aes(x=mage, y=gestation, color=parity)) +geom_hline(yintercept=270, color= 'red') + labs(title = "Mother's age vs Gestation period", x="Mother's age",y="Gestation Period" )
+
+
+```
+
+
