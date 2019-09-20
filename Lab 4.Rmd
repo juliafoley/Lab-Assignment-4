@@ -11,10 +11,34 @@ library(tidyverse)
 babies <- read_csv("https://raw.githubusercontent.com/ervance1/Sp2018-Data-Science-repo/master/babies2a.dat")
 babies <- rename(babies, bwtoz = `bwt/oz`) 
 ```
+## Over-Arching Goals
 
-## Team Lab 
+### 1) Analysis of premature births
 
-### Hypothesis
+A premature birth is defined as one that occurs before a gestational age of 270 days. We want to see the linear corilation between premature births from mothers that smoked durning their pregnancy vs. the mothers that did not smoke during their pregnancy.
+
+### 2) Analysis of birth weights at gestational ages
+
+The Surgeon General claimed that newborns of mothers who smoke have smaller birth weights at every gestational age (number of days into pregnancy when child is born). We want to create graphs to vizualize the linear relationship between smoking mothers and the babies weight at the gestational age. 
+
+
+## Team Study
+
+### Smokers vs. NonSmokers
+
+**Here are some graphs showing the variables that are simular between smoking mothers and non-smoking mothers:**
+
+```{r}
+
+```
+
+**Threats to the Valididty of the Experiment:**
+
+It's important to note all the variables taken into consideration during the experiments. While the more variables results in less error in the experiment, it's nearly impossible to considr all threats. Please note that the variables considered while running the numbers are as listed: ID, birthday, gestation length, birth weight, mothers/fathers race, mothers/fathers age, mothers/fathers education, mothers/fathers education, mothers/fathers pre-pregnancy weight, marital status of the mother, family income, mother smoking, how long has mother been smoking/ quit smoking, number of cigaretes a day the mother smokes, and if the baby was born pre-maturally. 
+
+
+
+### Team Hypothesis
 
 **Question 1**
 
@@ -67,7 +91,7 @@ Our hypothesis that there will be a positive correlation between birth weight an
 
 ### Recommendation 
 
-### Individual
+## Individual
 
 ### Julia Foley 
 
@@ -99,11 +123,11 @@ I found that my hypothesis that there would be a positive correlation between a 
 
 **Julia Foley**
 
-##### Individual 
+#### Individual 
 
 I created a plot using ggplot, geom_point, geom_smooth, lm, facet_wrap, and color = smoke. I also used lm to find the equation of the line. This helped me to compare the relationship between mother's pregnant weight, birth weight, premature, and smoking. Additionally, I made a question and a hypothesis, and I reported my findings.
 
-##### Team 
+#### Team 
 
 I created the document, I wrote the hypothesis and the conclusion for question 2. I also helped out with plot 2. 
 
