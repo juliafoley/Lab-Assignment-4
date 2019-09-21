@@ -415,7 +415,7 @@ cor(babies$mage,babies$gestation, use= "complete.obs")
 ```
 
 #### Findings:
-My hypothesis was incorrect. As the graph shows, any data points below the red line are considered premature. There is not an increase in the number of premature babies among older mothers. With a correlation of -0.044, there is no significant relationship between a woman's age and the chance that a baby will be born prematurely. 
+My hypothesis was incorrect. As the graph shows, any data points below the red line are considered premature. There is not an increase in the number of premature babies among older mothers. With a correlation of -0.044, there is no significant relationship between a woman's age and the chance that a baby will be born prematurely. However,  because this hypothesis is incorrect it shows that mothers age is not a confounding variable that could threaten the results of our main hypothesises.
 
 <p>&nbsp;</p>
 ## What each Member did 
@@ -453,3 +453,15 @@ I created a multitude of plots relating variables in the dataset 'babies'. I not
 #### Team
 
 I went through all of the team language in our Markdown file and touched it up so that it would be more suitable to a formal setting like a meeting with a client. I formalized the language and corrected any mistakes or typos that I found.
+
+<p>&nbsp;</p>
+
+###Thomas Neal
+
+#### Individual
+
+I tested several hypnotists regarding the gestation period to see if anything besides smoking could affect it. Ultimately I wanted to know if mothers age had anything to do with it but ultimately my hypothesis was incorrect. This shows that smoking is the number one correlation with gestation period.
+
+####Team
+
+I helped to explore possible confounding variables to see if they could affect the results of our main hypothesises. I also helped to resolve some serious merge conflicts that threatened to ruin our entire project.
