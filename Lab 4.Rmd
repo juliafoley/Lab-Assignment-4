@@ -388,6 +388,9 @@ ggplot(data = babies) +
 
 #### Findings
 
+I found that my hypothesis was correct. After plotting the number of premature births attributed to smokers vs the number attributed to non-smokers, I found an insignificant difference between the number of premature births reported by smokers relative to the number reported by non-smokers. This could be because of the presence of several confounding variables that could help explain the gestational period and birth weights of children. Weight and height of the parents, as well as income and education, can play a role in the physical and emotional health of the mother in the same way that smoking can.
+
+
 <p>&nbsp;</p>
 ## What each Member did 
 <p>&nbsp;</p>
