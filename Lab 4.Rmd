@@ -391,6 +391,31 @@ ggplot(data = babies) +
 
 I found that my hypothesis was correct. After plotting the number of premature births attributed to smokers vs the number attributed to non-smokers, I found an insignificant difference between the number of premature births reported by smokers relative to the number reported by non-smokers. This could be because of the presence of several confounding variables that could help explain the gestational period and birth weights of children. Weight and height of the parents, as well as income and education, can play a role in the physical and emotional health of the mother in the same way that smoking can.
 
+<p>&nbsp;</p>
+
+### Thomas Neal
+
+<p>&nbsp;</p>
+
+#### Question: 
+
+1) As women age is there a difference in the gestation period?  
+
+2) Are older women more likely to have premature births? 
+
+#### Hypothesis:
+
+Older women will have a less consistent gestation period and there will be a negative correlation So as women get older the chance of premature birts will increase. 
+
+```{r,echo=FALSE, warning=FALSE}
+ggplot(data=babies) +
+  geom_jitter(mapping=aes(x=mage, y=gestation, color=parity)) + geom_hline(yintercept=270, color= 'red') + labs(title = "Mother's age vs Gestation period", x="Mother's age",y="Gestation Period" )
+
+cor(babies$mage,babies$gestation, use= "complete.obs")
+```
+
+#### Findings:
+My hypothesis was incorrect. As the graph shows, any data points below the red line are considered premature. There is not an increase in the number of premature babies among older mothers. With a correlation of -0.044, there is no significant relationship between a woman's age and the chance that a baby will be born prematurely. 
 
 <p>&nbsp;</p>
 ## What each Member did 
