@@ -284,7 +284,7 @@ ggplot(data = babies, mapping = aes(x=bwtoz, y = mpregwt, color = smoke)) +
 lm(mpregwt~bwtoz, data = babies)
 ```
 
-** Findings:**
+**Findings:**
 
 I found that my hypothesis that there would be a positive correlation between a mother's pregnant weight and birth weight was correct. As shown by the lm slope, there is a weak positive correlation. Additionally, the plots show that there is a slight shift to the left in the premature graph as opposed to the not premature graph. This means that babies who are premature have a lower birth weight. Additionally, the data shows that there are more premature babies with mothers who smoked than with mothers who didn't smoke. This supports the two main questions because the plots show the relationship between a mother's weight, birth weight, premature, and smoking. Additionally, the data supports the two main questions because it shows that there is a negative correlation between premature and smoking, and a positive correlation between premature and smoking.  
 
@@ -292,11 +292,11 @@ I found that my hypothesis that there would be a positive correlation between a 
 ### Declan Franklin 
 <p>&nbsp;</p>
 
-** Question: **
+**Question:**
 
 Does Income effect weather the mother smokes or not?
 
-** Hypothesis:**
+**Hypothesis:**
 
 If both parents have a higher income, the mother is less likely to smoke during pregnancy.
 
@@ -312,7 +312,7 @@ ggplot(data=babies,mapping=aes(x=inc, group=smoke, fill = smoke)) +
   
 ```
 
-** Findings:**
+**Findings:**
 
 I found that most new families between $2500 - $7000. I also found that the non-smokers make more money than the smokers. This info could give insight to our team’s data by giving us insight on what the families can bring to the table while pregnant.
 <p>&nbsp;</p>
@@ -344,7 +344,7 @@ ggplot(data = babies , mapping = aes(x=ded, y = med, color=parity)) +
   geom_jitter() +
   geom_smooth(method = lm) + facet_wrap(~parity) +
   theme(plot.title=element_text(color="orange",face="bold", hjust=0.5))+
-  labs(title="Mother Education Vs Father Education and Parity")
+  labs(title="Mother Education Vs Father Education in relation to Parity")
 ```
 ```{r echo=FALSE}
 babies <- na.omit(babies)
