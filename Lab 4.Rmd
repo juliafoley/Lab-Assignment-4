@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 ---
 title: "Lab 4"
 author: "P-Hackers"
@@ -24,41 +23,50 @@ To test the Surgeon General's assertion that newborns of mothers who smoke have 
 
 <p>&nbsp;</p>
 
-
-
-## Team Hypothesis
+## Team Hypotheses
 <p>&nbsp;</p>
 
-### Question 1
+### Statement 1:
 
-We believe that there will be a strong positive corilation between premature births and mothers smoking while pregnant.
+We believe that there will be a strong positive corilation between premature births and mothers smoking while pregnant
 
-### Question 2
+### Statement 2:
 
-There will be a positive correlation between the length of gestation and birth weight. Because the baby develops during gestation, it follows that a longer period of gestation would result in higher birth weight. We also predict that the children of smoking mothers will weigh less than children of non-smoking mothers.  
-
-<p>&nbsp;</p>
-## Why Important
-
-### Question 1
-
-Determining the effect smoking has on the rate of pre-term birth is of vital importance to new mothers. If smoking harms the health of a newborn child, the public must be informed of these risks so that they may take the necessary steps to protect themselves and their families.  
-
-### Question 2
+We believe that there will be a positive correlation between birth weight and length of gestation because the baby develops during gestation so, it would make sense that the longer the gestation, the higher the birth weight. We also predict that babies whose mothers smoke will weigh less than babies whose mothers don't. 
 
 <p>&nbsp;</p>
-## More Detailed Why Important 
+## Hypotheses Significance
+<p>&nbsp;</p>
 
-### Question 1
+### Statement 1:
 
-If it's found that smoking harms pregnant women and their babies, it's reasonable to assume that expecting mothers would stop, or severely limit their smoking. This would deal a catastrophic blow to cigarette manufacturers. Additionally, it would provide further information as to why babies are born prematurely and could open up new avenues of inquiry as to the effects of smoking on pregnancy and birth. 
+Hypothesis 1 is significant because it will help mothers vizualize the positive corilation between smoking while pregnant and premature births.  
 
-### Question 2
+### Statement 2:
+
+Hypothesis 2 is significant because if a mother is shown the positive correlation between a dangerously light weight newborn from a shortened gestation period, the mother will want to do anything in her power to make sure her child makes it through the full 270 days. If that data then shows the mother that the gestation period is shorted because of smoking, it should be assumed that the mother will quit smoking during her pregnancy.
 
 <p>&nbsp;</p>
 
+## A Deeper Explaination of the Hypotheses 
 
-## Additional Team Study
+<p>&nbsp;</p>
+### Statment 1:
+
+If smoking has a negative effect on pregnancy, it would mean that expecting mothers would stop smoking. This would not be good for the cigarette companies because they would lose money. Additionally, it would provide further information to why babies are premature and would open up many other researches about the effects of smoking on pregnancy and birth. 
+
+<p>&nbsp;</p>
+
+### Statement 2:
+
+If there is a significant evidence that a newborns weight is dangerously light because of a gestation period, then it's safe to assume that any normal mother would want her baby to develop for the full 270 days. If then the mother is presented data suggesting the gestation period is shortened because of smoking while pregnant, then it will in belief encourage mothers to stop smoking during pregnancy.
+
+
+<p>&nbsp;</p>
+
+## Important Details to Consider
+
+<p>&nbsp;</p>
 
 ### Smokers vs. NonSmokers
 
@@ -69,15 +77,16 @@ It's imperative to note each of the variables taken into consideration during th
 
 <p>&nbsp;</p>
 
-#### Here are some graphs showing the variables that we thought are simular between smoking mothers and non-smoking mothers:
+#### Here are some graphs showing the variables that are simular between smoking mothers and non-smoking mothers:
 
-```{r, warning=FALSE,echo=FALSE}
-library(tidyverse)
-babies <- read_csv("https://raw.githubusercontent.com/ervance1/Sp2018-Data-Science-repo/master/babies2a.dat")
-babies <- rename(babies, bwtoz = `bwt/oz`)
+```{r, warning=FALSE, message=FALSE, echo=TRUE}
+snames <- c(
+  "0" = "Non-Smoker",
+  "1" = "Smoker"
+)
 ggplot(data=babies,mapping=aes(x=dht))+
   geom_bar()+
-  facet_wrap(~smoke) +
+  facet_wrap(~smoke, labeller = as_labeller(snames)) +
   labs(title = "Fathers Height", x ="Fathers Height") +
   theme_classic() +
   theme(plot.title = element_text(color="black",face="bold"))
@@ -85,10 +94,14 @@ ggplot(data=babies,mapping=aes(x=dht))+
 ```
 
 
-```{r, warning=FALSE,echo=FALSE}
+```{r, warning=FALSE, message=FALSE, echo=TRUE}
+snames <- c(
+  "0" = "Non-Smoker",
+  "1" = "Smoker"
+)
 ggplot(data=babies,mapping=aes(x=mht))+
   geom_bar()+
-  facet_wrap(~smoke) +
+  facet_wrap(~smoke, labeller = as_labeller(snames)) +
   labs(title = "Mothers Height", x ="Mothers Height") +
   theme_classic() +
   theme(plot.title = element_text(color="black",face="bold"))
@@ -97,10 +110,14 @@ ggplot(data=babies,mapping=aes(x=mht))+
 
 
 
-```{r, warning=FALSE,echo=FALSE}
+```{r, warning=FALSE, message=FALSE, echo=TRUE}
+snames <- c(
+  "0" = "Non-Smoker",
+  "1" = "Smoker"
+)
 ggplot(data=babies,mapping=aes(x=dage))+
   geom_bar()+
-  facet_wrap(~smoke) +
+  facet_wrap(~smoke, labeller = as_labeller(snames)) +
   labs(title = "Fathers Age", x ="Fathers Age") +
   theme_classic() +
   theme(plot.title = element_text(color="black",face="bold"))
@@ -109,10 +126,14 @@ ggplot(data=babies,mapping=aes(x=dage))+
 
 
 
-```{r, warning=FALSE,echo=FALSE}
+```{r, warning=FALSE, message=FALSE, echo=TRUE}
+snames <- c(
+  "0" = "Non-Smoker",
+  "1" = "Smoker"
+)
 ggplot(data=babies,mapping=aes(x=mrace))+
   geom_bar()+
-  facet_wrap(~smoke) +
+  facet_wrap(~smoke, labeller = as_labeller(snames)) +
   labs(title = "Mothers Race", x ="Mothers Race") +
   theme_classic() +
   theme(plot.title = element_text(color="black",face="bold"))
@@ -121,10 +142,14 @@ ggplot(data=babies,mapping=aes(x=mrace))+
 
 
 
-```{r, warning=FALSE,echo=FALSE}
+```{r, warning=FALSE, message=FALSE, echo=TRUE}
+snames <- c(
+  "0" = "Non-Smoker",
+  "1" = "Smoker"
+)
 ggplot(data=babies,mapping=aes(x=mrace))+
   geom_bar()+
-  facet_wrap(~smoke) +
+  facet_wrap(~smoke, labeller = as_labeller(snames)) +
   labs(title = "Fathers Race", x ="Fathers Race") +
   theme_classic() +
   theme(plot.title = element_text(color="black",face="bold"))
@@ -133,46 +158,28 @@ ggplot(data=babies,mapping=aes(x=mrace))+
 
 
 
-```{r, warning=FALSE,echo=FALSE}
+```{r, warning=FALSE, message=FALSE, echo=TRUE}
+snames <- c(
+  "0" = "Non-Smoker",
+  "1" = "Smoker"
+)
 ggplot(data=babies,mapping=aes(x=date))+
   geom_bar()+
-  facet_wrap(~smoke) +
+  facet_wrap(~smoke, labeller = as_labeller(snames)) +
   labs(title = "Babies Birthday", x ="Babies Birthday") +
   theme_classic() +
   theme(plot.title = element_text(color="black",face="bold"))
 
 ```
 
-
-#### Here are some graphs showing the variables that we thought are noticably different between smoking mothers and non-smoking mothers:
-
-
-```{r, warning=FALSE,echo=FALSE}
-ggplot(data=babies,mapping=aes(x=mpregwt))+
-  geom_bar()+
-  facet_wrap(~smoke) +
-  labs(title = "Mothers Weight", x ="Mothers Weight") +
-  theme_classic() +
-  theme(plot.title = element_text(color="black",face="bold"))
-
-```
-
-
-```{r, warning=FALSE,echo=FALSE}
-ggplot(data=babies,mapping=aes(x=dwt))+
-  geom_bar()+
-  facet_wrap(~smoke) +
-  labs(title = "Fathers Weight", x ="Fathers Weight") +
-  theme_classic() +
-  theme(plot.title = element_text(color="black",face="bold"))
-
-```
-
-
-```{r, warning=FALSE,echo=FALSE}
+```{r, warning=FALSE, message=FALSE, echo=TRUE}
+snames <- c(
+  "0" = "Non-Smoker",
+  "1" = "Smoker"
+)
 ggplot(data=babies,mapping=aes(x=med))+
   geom_bar()+
-  facet_wrap(~smoke) +
+  facet_wrap(~smoke, labeller = as_labeller(snames)) +
   labs(title = "Mothers Education", x ="Mothers Education") +
   theme_classic() +
   theme(plot.title = element_text(color="black",face="bold"))
@@ -180,21 +187,62 @@ ggplot(data=babies,mapping=aes(x=med))+
 ```
 
 
-```{r, warning=FALSE,echo=FALSE}
+```{r, warning=FALSE, message=FALSE, echo=TRUE}
+snames <- c(
+  "0" = "Non-Smoker",
+  "1" = "Smoker"
+)
 ggplot(data=babies,mapping=aes(x=ded))+
   geom_bar()+
-  facet_wrap(~smoke) +
+  facet_wrap(~smoke, labeller = as_labeller(snames)) +
   labs(title = "Fathers Education", x ="Fathers Education") +
   theme_classic() +
   theme(plot.title = element_text(color="black",face="bold"))
 
 ```
 
+#### Here are some graphs showing the variables that are noticably different between smoking mothers and non-smoking mothers:
 
-```{r, warning=FALSE,echo=FALSE}
+
+```{r, warning=FALSE, message=FALSE, echo=TRUE}
+snames <- c(
+  "0" = "Non-Smoker",
+  "1" = "Smoker"
+)
+ggplot(data=babies,mapping=aes(x=mpregwt))+
+  geom_bar()+
+  facet_wrap(~smoke, labeller = as_labeller(snames)) +
+  labs(title = "Mothers Weight", x ="Mothers Weight") +
+  theme_classic() +
+  theme(plot.title = element_text(color="black",face="bold"))
+
+```
+
+
+```{r, warning=FALSE, message=FALSE, echo=TRUE}
+snames <- c(
+  "0" = "Non-Smoker",
+  "1" = "Smoker"
+)
+ggplot(data=babies,mapping=aes(x=dwt))+
+  geom_bar()+
+  facet_wrap(~smoke, labeller = as_labeller(snames)) +
+  labs(title = "Fathers Weight", x ="Fathers Weight (Ibs") +
+  theme_classic() +
+  theme(plot.title = element_text(color="black",face="bold"))
+
+```
+
+
+
+```{r, warning=FALSE, message=FALSE, echo=TRUE}
+snames <- c(
+  "0" = "Non-Smoker",
+  "1" = "Smoker"
+)
 ggplot(data=babies,mapping=aes(x=bwtoz))+
   geom_bar()+
-  facet_wrap(~smoke) +
+  facet_wrap(~smoke, labeller = as_labeller(snames)) +
   labs(title = "Babies Weight", x ="Babies Weight (IDS)") +
   theme_classic() +
   theme(plot.title = element_text(color="black",face="bold"))
@@ -202,16 +250,20 @@ ggplot(data=babies,mapping=aes(x=bwtoz))+
 ```
 
 
-```{r, warning=FALSE,echo=FALSE}
+
+```{r, warning=FALSE, message=FALSE, echo=TRUE}
+snames <- c(
+  "0" = "Non-Smoker",
+  "1" = "Smoker"
+)
 ggplot(data=babies,mapping=aes(x=gestation))+
   geom_bar()+
-  facet_wrap(~smoke) +
+  facet_wrap(~smoke, labeller = as_labeller(snames)) +
   labs(title = "Gestation Period", x ="Gestation Period") +
   theme_classic() +
   theme(plot.title = element_text(color="black",face="bold"))
 
 ```
-
 
 
 
@@ -234,7 +286,8 @@ scale_color_continuous(label = c("0.00"= "Nonsmoker","0.25"="Once a Smoker,but n
   
 ```
 
-#### Conclusion
+#### Conclusion:
+
 The data proved our first hypothesis to be correct. It showed that full-term births were mainly attributed to non-smokers and that premature births were primarily ascribed to smokers. What's more, the sample data was mainly made up of non-smokers and smokers. There weren't many people reporting as in-between. 
 
 <p>&nbsp;</p>
@@ -254,19 +307,19 @@ ggplot(data = babies, mapping = aes(x=bwtoz, y = gestation, color = Premature)) 
 lm(gestation~bwtoz, data = babies)
 ```
 
-#### Conclusion
+#### Conclusion:
 
 
 We hypothesized that there would be a positive correlation between birth weight and gestation. After plotting and analyzing the data, we were proven correct. In our lm, the slope ( birth weight/gestation) is .3422 which indicates a positive correlation. Our secondary hypothesis concerning the effects of smoking on birth weight was slightly correct. We observed a weak negative correlation between birth weight and smoking. Our model showed that babies whose mothers smoke have a slightly lower birth weight than babies whose mothers do not. Lastly, the difference in color exhibited between premature and non-premature babies is interesting as it further demonstrates the correlation between gestation and birth weight. 
 
 <p>&nbsp;</p>
 
-### Recommendation 
+### Recommendation: 
+<p>&nbsp;</p>
 
+**Warning: The P-Hackers have determined** That smoking any form of tobacco while pregnant will increase the risk of birth defects. Smoking also has a negative impact on the mothers health and is not advised. We recommend that expecting mothers find healthy alternatives to smoking, such as exercise, or any other activity the releases natural dopamine in the body.
 
-
-
-
+<p>&nbsp;</p>
 
 ## Individual Studies 
 <p>&nbsp;</p>
@@ -274,11 +327,11 @@ We hypothesized that there would be a positive correlation between birth weight 
 ### Julia Foley 
 <p>&nbsp;</p>
 
-#### Question
+#### Question:
 
 What is the correlation between a mother's pregnant weight and a baby's birth weight? Do babies with mothers who smoke have a higher or lower birth weight? Are babies whose mothers smoke more likely to be premature than babies whose mothers don't smoke? 
 
-#### Hypothesis
+#### Hypothesis:
 
 I believe that there will be a positive correlation between birth weight and mother's pregnant weight. Additionally, I believe that Premature babies will have a lower birth weight than babies who are not premature. Lastly, I believe that in the premature section, there will be more babies whose mothers smoke than babies whose mothers did not smoke. 
 
@@ -294,17 +347,19 @@ ggplot(data = babies, mapping = aes(x=bwtoz, y = mpregwt, color = smoke)) +
 lm(mpregwt~bwtoz, data = babies)
 ```
 
-#### Findings
+#### Findings:
 
 I found that my hypothesis that there would be a positive correlation between a mother's pregnant weight and birth weight was correct. As shown by the lm slope, there is a weak positive correlation. Additionally, the plots show that there is a slight shift to the left in the premature graph as opposed to the not premature graph. This means that babies who are premature have a lower birth weight. Additionally, the data shows that there are more premature babies with mothers who smoked than with mothers who didn't smoke. This supports the two main questions because the plots show the relationship between a mother's weight, birth weight, premature, and smoking. Additionally, the data supports the two main questions because it shows that there is a negative correlation between premature and smoking, and a positive correlation between premature and smoking.  
 
 <p>&nbsp;</p>
+
 ### Declan Franklin 
+
 <p>&nbsp;</p>
 
 #### Question: 
 
-Does Income effect weather the mother smokes or not?
+Does family income impact the likely-hood that a mother smokes or not during pregnancy?
 
 #### Hypothesis:
 
@@ -372,11 +427,13 @@ In addition, we can see that the positive correlations are moderate and the nega
 <p>&nbsp;</p>
 
 ### Question:
+
 1) Given the dataset we have, is there enough information to make a conclusion as to whether smoking is the main factor in decreased birth weights? Or could lower birthweights be explained better by a combination of factors including smoking as well as the height and weight of the mother and father?
 
 2) Are there really that many more premature births associated with smokers as opposed to non-smokers? What else could cause a premature birth?
 
 #### Hypothesis
+
 There will be an insignificant difference in the number of premature births attributed to smoking mothers and those attributed to non-smoking mothers.
 
 ```{r,echo=FALSE, warning=FALSE}
@@ -456,12 +513,12 @@ I went through all of the team language in our Markdown file and touched it up s
 
 <p>&nbsp;</p>
 
-###Thomas Neal
+### Thomas Neal
 
 #### Individual
 
 I tested several hypnotists regarding the gestation period to see if anything besides smoking could affect it. Ultimately I wanted to know if mothers age had anything to do with it but ultimately my hypothesis was incorrect. This shows that smoking is the number one correlation with gestation period.
 
-####Team
+#### Team
 
 I helped to explore possible confounding variables to see if they could affect the results of our main hypothesises. I also helped to resolve some serious merge conflicts that threatened to ruin our entire project.
