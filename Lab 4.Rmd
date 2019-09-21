@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ---
 title: "Lab 4"
 author: "P-Hackers"
