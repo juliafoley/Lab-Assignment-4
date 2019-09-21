@@ -264,11 +264,11 @@ Our hypothesis that there will be a positive correlation between birth weight an
 ### Julia Foley 
 <p>&nbsp;</p>
 
-#### Question
+**Question:**
 
 What is the correlation between a mother's pregnant weight and a baby's birth weight? Do babies with mothers who smoke have a higher or lower birth weight? Are babies whose mothers smoke more likely to be premature than babies whose mothers don't smoke? 
 
-#### Hypothesis
+**Hypothesis:**
 
 I believe that there will be a positive correlation between birth weight and mother's pregnant weight. Additionally, I believe that Premature babies will have a lower birth weight than babies who are not premature. Lastly, I believe that in the premature section, there will be more babies whose mothers smoke than babies whose mothers did not smoke. 
 
@@ -284,7 +284,7 @@ ggplot(data = babies, mapping = aes(x=bwtoz, y = mpregwt, color = smoke)) +
 lm(mpregwt~bwtoz, data = babies)
 ```
 
-#### Findings
+** Findings:**
 
 I found that my hypothesis that there would be a positive correlation between a mother's pregnant weight and birth weight was correct. As shown by the lm slope, there is a weak positive correlation. Additionally, the plots show that there is a slight shift to the left in the premature graph as opposed to the not premature graph. This means that babies who are premature have a lower birth weight. Additionally, the data shows that there are more premature babies with mothers who smoked than with mothers who didn't smoke. This supports the two main questions because the plots show the relationship between a mother's weight, birth weight, premature, and smoking. Additionally, the data supports the two main questions because it shows that there is a negative correlation between premature and smoking, and a positive correlation between premature and smoking.  
 
@@ -292,11 +292,11 @@ I found that my hypothesis that there would be a positive correlation between a 
 ### Declan Franklin 
 <p>&nbsp;</p>
 
-#### Question: 
+** Question: **
 
 Does Income effect weather the mother smokes or not?
 
-#### Hypothesis:
+** Hypothesis:**
 
 If both parents have a higher income, the mother is less likely to smoke during pregnancy.
 
@@ -312,33 +312,89 @@ ggplot(data=babies,mapping=aes(x=inc, group=smoke, fill = smoke)) +
   
 ```
 
-#### Findings:
+** Findings:**
 
 I found that most new families between $2500 - $7000. I also found that the non-smokers make more money than the smokers. This info could give insight to our team’s data by giving us insight on what the families can bring to the table while pregnant.
 <p>&nbsp;</p>
 
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results=FALSE}
+library(tidyverse)
+```
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results=FALSE}
+babies <- read_csv("https://raw.githubusercontent.com/ervance1/Sp2018-Data-Science-repo/master/babies2a.dat")
+babies <- rename(babies, bwtoz = `bwt/oz`)
+```
 
-## What each Member did 
+
+### Nisia Pinto
+
+**Question:**
+
+Mother Education Vs Dad Education and Parity:
+Do couples with higher  education tend to have less kids than the ones with lower education?**
+
+**Hypothesis:**
+
+Couples with higher educational levels have less kids than the ones with lower educational levels.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ggplot(data = babies , mapping = aes(x=ded, y = med, color=parity)) +
+  geom_point() +
+  scale_color_gradient(low="blue", high="orange")+
+  geom_jitter() +
+  geom_smooth(method = lm) + facet_wrap(~parity) +
+  theme(plot.title=element_text(color="orange",face="bold", hjust=0.5))+
+  labs(title="Mother Education Vs Father Education and Parity")
+```
+```{r echo=FALSE}
+babies <- na.omit(babies)
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results=FALSE }
+cor(babies$med,babies$ded)
+cor(babies$med,babies$parity)
+cor(babies$ded,babies$parity)
+```
+
+**Findings:**
+
+Correlations:
+**Med vs Ded:** 0.5992664    **Med vs Parity** : -0.1760948    **Ded vs Parity:** -0.1312375
+
+The mather and father's education are positively correlated. However, parity is negatively correlated to both of them. I was able to answer my question and confirm my hypothesis, people with higher education have less babies than less educated people. This can be due to the addition of other different factors:college tuitions, retirement money, health care, or salary.
+In addition, we can see that the positive correlations are moderate and the negative are weak.
+
+
+## Each Member contribuition: 
 <p>&nbsp;</p>
 
 ### Julia Foley
 
-
-#### Individual 
+**Individual:**
 
 I created a plot using ggplot, geom_point, geom_smooth, lm, facet_wrap, and color = smoke. I also used lm to find the equation of the line. This helped me to compare the relationship between mother's pregnant weight, birth weight, premature, and smoking. Additionally, I made a question and a hypothesis, and I reported my findings.
 
-#### Team 
+**Team:**
 
 I created the document, I wrote the hypothesis and the conclusion for question 2. I also helped out with plot 2. Additionally, I contributed to the why important and more detailed why important for question 1. 
 
 <p>&nbsp;</p>
 ### Declan Franklin 
 
-#### Individual
+**Individual:**
 
 I created my own study on how income differs from smokers and non-smokers. I used geom_density and a facet_wrap to visualize the data. I also used different labelling techniques so that the plots formatted nicely.
 
-#### Team 
+**Team:**
 
-For the team: I created all the plots of potentially similar and different variables, I answered the Validity question, I formatted the HTML for aesthetic purposes, and I did the final review of everyone’s Code to make sure it ran correctly and neatly.
+I created all the plots of potentially similar and different variables, I answered the Validity question, I formatted the HTML for aesthetic purposes, and I did the final review of everyone’s Code to make sure it ran correctly and neatly.
+
+### Nisia Pinto
+
+**Individual:**
+
+I compared, Mom vs Dad Education with Parity and made a plot using the required functions.
+
+**Team:**
+
+I correlated  all the variables to smoke to see if they are negatively or positively correlated to help with the team findings. Helped to edit the format.
