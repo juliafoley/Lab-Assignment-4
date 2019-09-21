@@ -330,7 +330,7 @@ I created a plot using ggplot, geom_point, geom_smooth, lm, facet_wrap, and colo
 
 #### Team 
 
-I created the document, I wrote the hypothesis and the conclusion for question 2. I also helped out with plot 2. 
+I created the document, I wrote the hypothesis and the conclusion for question 2. I also helped out with plot 2. Additionally, I contributed to the why important and more detailed why important for question 1. 
 
 <p>&nbsp;</p>
 ### Declan Franklin 
